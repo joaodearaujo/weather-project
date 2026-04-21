@@ -11,7 +11,7 @@ type HourlyForecastProps = {
 export default function HourlyForecast({coords}: HourlyForecastProps) {
 
     const {data} = useSuspenseQuery({
-    queryKey: ['weather'],
+    queryKey: ['weather', coords],
     queryFn: () => getWeather({lat: coords.lat, lon: coords.lon}),
   })
 
